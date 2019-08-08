@@ -24,8 +24,7 @@ resource "aws_cloudwatch_log_group" "app" {
 }
 
 module "alb_ingress" {
-  #  source            = "git::https://github.com/cloudposse/terraform-aws-alb-ingress.git?ref=tags/0.7.0"
-  source            = "../terraform-aws-alb-ingress"
+  source            = "git::https://github.com/wesselvdv/terraform-aws-alb-ingress.git?ref=tags/0.7.0.1"
   name              = var.name
   namespace         = var.namespace
   stage             = var.stage
@@ -79,8 +78,7 @@ module "container_definition" {
 }
 
 module "ecs_alb_service_task" {
-  # source                            = "git::https://github.com/cloudposse/terraform-aws-ecs-alb-service-task.git?ref=tags/0.13.1"
-  source                            = "../aws-ecs-alb-service-task"
+  source                            = "git::https://github.com/wesselvdv/terraform-aws-ecs-alb-service-task.git?ref=tags/0.13.1.1"
   name                              = var.name
   namespace                         = var.namespace
   stage                             = var.stage

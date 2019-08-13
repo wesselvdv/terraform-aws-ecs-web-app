@@ -99,7 +99,7 @@ variable "launch_type" {
 }
 
 variable "environment" {
-  type        = list(string)
+  type        = list(object({name = string, valueFrom = string }))
   description = "The environment variables for the task definition. This is a list of maps"
   default     = []
 }

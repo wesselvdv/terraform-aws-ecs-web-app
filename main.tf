@@ -33,6 +33,7 @@ module "alb_ingress" {
   port              = var.container_port
   health_check_path = var.alb_ingress_healthcheck_path
 
+  target_group_arn      = var.alb_target_group_arn
   authenticated_paths   = var.alb_ingress_authenticated_paths
   unauthenticated_paths = var.alb_ingress_unauthenticated_paths
   authenticated_hosts   = var.alb_ingress_authenticated_hosts
